@@ -1,0 +1,18 @@
+.zoneduhaut {
+	width:100%;
+	height:15%;
+	background-color:#cc4343;
+    top:0px;
+	}
+.zonedumilieu {
+	width:100%;
+	height: 500px;;
+	background-color:#43cfa1d0;
+	}
+
+    .zonedegauche {
+        float:left;
+        width:100px;
+        height:400px;
+        background-color:#4a84da;
+        }

@@ -1,0 +1,334 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>page panier</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="script.js"></script>
+</head>
+
+<body>
+<div>
+<!--	TABLEAU EXEMPLE EN DUR -->
+<!--
+		<br><br>
+	ceci est un apercu du resultat recherché, la structure est "en dur", toutes les valeurs viennent de local storage <br> le sous total est calculé , les boutons sont fonctionnels<br>
+	
+<table id="mytablepanier">
+	
+	<tr>
+    <th>REFERENCE</th>
+    <th>NOM </th>
+	<th>DESCRIPTION</th>
+	<th>Quantité en stock</th>
+	<th>PRIX</th>
+	<th>Article(s) dans le panier</th>
+	<th>sous total</th>
+	<th>Ajout Panier</th>
+	<th>Enlever du Panier</th>
+	</tr>
+	
+
+</table>
+-->
+
+<script>
+	
+/*
+	function remplirTablePanier() {
+		var tbl = document.getElementById("mytablepanier") ;
+		var row = tbl.insertRow();
+		var cell1 = row.insertCell();
+		var cell2 = row.insertCell();
+		var cell3 = row.insertCell();
+		var cell4 = row.insertCell();
+		var cell5 = row.insertCell();
+		var cell6 = row.insertCell();
+		var cell7 = row.insertCell();
+		var cell8 = row.insertCell();
+		var cell9 = row.insertCell();
+		//console.log ((JSON.parse(localStorage.getItem("CrabeRouge"))).ref)
+		cell1.innerHTML = ((JSON.parse(localStorage.getItem("CrabeRouge"))).ref);
+		cell2.innerHTML = ((JSON.parse(localStorage.getItem("CrabeRouge"))).nom);
+		cell3.innerHTML = ((JSON.parse(localStorage.getItem("CrabeRouge"))).descrip);
+		cell4.innerHTML = ((JSON.parse(localStorage.getItem("CrabeRouge"))).quanti);
+		cell5.innerHTML = ((JSON.parse(localStorage.getItem("CrabeRouge"))).prix);
+		cell6.innerHTML = ((JSON.parse(localStorage.getItem("CrabeRouge"))).danspanier);
+		cell7.innerHTML = ((cell6.innerHTML)*(cell5.innerHTML));
+    	cell8.innerHTML = '<button class="boutonpanier" type="button" onclick=ajouterCrabeRouge()>' + '<span class="spanpanier"></span> panier +1</button>';
+		cell9.innerHTML = '<button class="boutonpanier" type="button" onclick=supprimerCrabeRouge()>' + '<span class="spanpanier"></span> supprimer</button>';
+		
+		
+		
+
+	}
+remplirTablePanier();*/
+</script>
+	</div>
+	
+	<div>
+<!--		TENTATIVE DE TABLEAU DYNAMIQUE-->
+	
+	<br><br><br><br>
+		
+		<script>
+	//definition des fonctions des boutons AJOUT PANIER , ENLEVER DU PANIER
+			
+
+		
+		
+/*function ajouterPanier() {
+		var nomDeLaKey = 
+		var temporaire = JSON.parse(localStorage[localStorage.key(i)]);
+			temporaire.danspanier = ((temporaire.danspanier)+1);
+			localStorage[localStorage.key(i)] = JSON.stringify(temporaire); 
+			window.location.reload(false); }
+			
+			
+function supprimerPanier() {
+		var temporaire = JSON.parse(localStorage[localStorage.key(i)]);
+			temporaire.danspanier = 0;
+			localStorage[localStorage.key(i)] = JSON.stringify(temporaire); 
+			window.location.reload(false); }*/
+			
+			
+		</script>
+		
+		
+	<table id="RealTablePanier">
+	
+	<tr>
+    <th>REFERENCE</th>
+    <th>NOM </th>
+	<th>DESCRIPTION</th>
+	<th>Quantité en stock</th>
+	<th>PRIX</th>
+	<th>Article(s) dans le panier</th>
+	<th>sous total</th>
+	<th>Ajout Panier</th>
+	<th>Enlever du Panier</th>
+	</tr>
+	
+
+</table>	
+		
+		<script>
+	
+
+function remplirTablePanier() {
+		
+		for (i=0; i<localStorage.length; i++) {
+		
+		var tbl = document.getElementById("RealTablePanier") ;
+		var row = tbl.insertRow();
+		var cell1 = row.insertCell();
+		var cell2 = row.insertCell();
+		var cell3 = row.insertCell();
+		var cell4 = row.insertCell();
+		var cell5 = row.insertCell();
+		var cell6 = row.insertCell();
+		var cell7 = row.insertCell();
+		var cell8 = row.insertCell();
+		var cell9 = row.insertCell();
+		//console.log ((JSON.parse(localStorage.getItem("CrabeRouge"))).ref)
+		cell1.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).ref);
+		cell2.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).nom);
+		cell3.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).descrip);
+		cell4.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).quanti);
+		cell5.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).prix);
+		cell6.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).danspanier);
+		cell7.innerHTML = ((cell6.innerHTML)*(cell5.innerHTML));
+    	cell8.innerHTML = '<button class="boutonpanier" type="button" onclick="">' + '<span class="spanpanier"></span> panier +1</button>';
+		cell9.innerHTML = '<button class="boutonpanier" type="button" onclick="">' + '<span class="spanpanier"></span> supprimer</button>';
+			
+//repérer zero panier
+		if (cell6.innerHTML == 0) {
+		tbl.deleteRow(1); 
+		console.log("une ligne dont le produit n'est pas dans le panier, n'a pas été affichée")
+			} else { ; }
+		}
+			
+			
+		
+}
+		
+		
+remplirTablePanier();
+</script>
+		
+		
+		
+		
+		
+	</div>
+	<br>
+	<button onclick="ajouterCrabeRouge()">bouton test pour ajouter 1 au panier pour Crabe Rouge</button> <br>
+	<button onclick="ajouterCrabeBleu()">bouton test pour ajouter 1 au panier pour mini Crabe Bleu</button> <br>
+	<button onclick="supprimerCrabeRouge()">bouton test pour SUPPRIMER DU PANIER Crabe Rouge</button> <br>
+	
+	<div>
+		
+<!--		CALCUL ET AFFICHAGE DU HorsTaxe TVA TTC-->
+		
+		<script>
+			
+	//fonction pour valeur hors taxe
+			let totalHT = 0;
+			let produitHT = 0;
+			let nombrepanier=0;
+			let prixunitaire=0;
+			function tht() {
+				for (i=0 ; i < localStorage.length ; i++) {
+				
+				nombrepanier = (((JSON.parse(localStorage.getItem(localStorage.key(i))))).danspanier);
+				prixunitaire = (((JSON.parse(localStorage.getItem(localStorage.key(i))))).prix) ;
+
+				nombrepanier.type = 'password' ; 
+				prixunitaire.type = 'password' ;
+				produitHT = (nombrepanier*prixunitaire);
+				totalHT = (totalHT + produitHT) ;
+							
+					}
+				
+			}
+			
+			tht();
+			console.log (totalHT);
+			
+	//fonction pour valeur TVA
+			let TVAnumber = 0
+			function afficherTVA () {
+				TVAnumber = ( totalHT * 20 / 100)	
+			}
+			afficherTVA();
+			console.log (TVAnumber);
+			
+	//fonction pour valeur TTC
+			let TTCnumber = 0 ;
+			function afficherTTC () {
+				TTCnumber =(totalHT+TVAnumber) ;
+			}
+			afficherTTC();
+			console.log (TTCnumber) ;
+			
+		</script>
+		
+<!--affichage HT TVA TTC sous le tableau-->
+		
+		<br> <b>total hors taxes</b> <br>
+		<span id="HT"></span>
+		<script> document.getElementById("HT").innerHTML=totalHT</script>
+		
+		<br><b>TVA</b><br>
+		<span id="TVA"></span>
+		<script> document.getElementById("TVA").innerHTML=TVAnumber</script>
+		
+		<br><b>Total TTC</b><br>
+				<span id="TTC"></span>
+		<script> document.getElementById("TTC").innerHTML=TTCnumber</script>
+		
+		<br><br><br>
+		
+		<script> let prepaye= (sessionStorage.getItem('pognon'));
+		prepaye.type = 'password' ; 
+</script>
+		
+		vous disposez d'une somme prépayée sur ce site : <br>
+		actuellement : <span id="prepaye"></span> €
+		<script> document.getElementById("prepaye").innerHTML=prepaye</script>
+		<br>
+		
+		<br>
+		
+		<script>
+	// fonction pour le bouton finaliser commande		
+			quantiteNouvelle = 0;
+			quantiteTotale =0 ;
+			quantiteUtilisee = 0;
+			function passercommande() {
+				for (i=0 ; i < localStorage.length ; i++) {
+					
+	//pour chaque item combien fait quantité moins panier ?
+				quantiteTotale = (((JSON.parse(localStorage.getItem(localStorage.key(i))))).quanti);
+				quantiteTotale.type = 'password' ; 
+				quantiteUtilisee = (((JSON.parse(localStorage.getItem(localStorage.key(i))))).danspanier) ;
+				quantiteUtilisee.type = 'password' ; 
+				quantiteNouvelle = ( quantiteTotale - quantiteUtilisee) ;
+				quantiteNouvelle.type = 'number' ; 
+				console.log (quantiteNouvelle);
+				quantiteUtilisee = 0 ;
+				
+					
+	//mettre le panier a zero
+					var temporaire = JSON.parse(localStorage[localStorage.key(i)]);
+					temporaire.danspanier = 0;
+					localStorage[localStorage.key(i)] = JSON.stringify(temporaire); 
+	//mettre la quantité a jour
+					var temporaire2 = JSON.parse(localStorage[localStorage.key(i)]);
+					temporaire2.quanti = (quantiteNouvelle);
+					
+					localStorage[localStorage.key(i)] = JSON.stringify(temporaire2); 
+					
+
+					}
+	//verif si le solde est sup au motnant de la commande , mise à jour du solde de l'utilisateur , remerciement, reload
+				
+				if (prepaye >= TTCnumber) {
+				prepaye = (prepaye - TTCnumber) ;
+				sessionStorage.setItem('pognon', ((JSON.stringify(prepaye))));
+
+				alert("Commande validée , merci !")
+				window.location.reload(false); 
+				} else {
+					
+					document.getElementById("apresbouton").innerHTML="Le montant de la commande est supérieur à votre solde !"
+				}
+					
+				
+			}
+	
+		
+		
+		
+		</script>
+		<button onclick="passercommande()">Finaliser commande</button>
+		<br>
+		<span id="apresbouton"></span>
+		
+		
+	</div>
+	<br>
+
+	
+	<br> <br> <br> <br>
+	<script>
+		
+//boutons de test et quitter
+			function supprimerCrabeRouge() {
+		var temporaire = JSON.parse(localStorage["CrabeRouge"]);
+			temporaire.danspanier = 0;
+			localStorage["CrabeRouge"] = JSON.stringify(temporaire); 
+			window.location.reload(false); }
+		
+		
+		function ajouterCrabeRouge() {
+		var temporaire = JSON.parse(localStorage["CrabeRouge"]);
+			temporaire.danspanier = ((temporaire.danspanier)+1);
+			localStorage["CrabeRouge"] = JSON.stringify(temporaire); 
+			window.location.reload(false); }
+		
+		
+			function ajouterCrabeBleu() {
+		var temporaire = JSON.parse(localStorage["CrabeBleu"]);
+			temporaire.danspanier = ((temporaire.danspanier)+1);
+			localStorage["CrabeBleu"] = JSON.stringify(temporaire); 
+			window.location.reload(false); }
+	</script>
+
+	<button onclick="montremoilelocalstorage()">montrez moi le local storage dans la console</button> <br>
+	<button class="boutonacceuil" onclick="window.location.href='index.html';">Quitter</button> <br>
+	
+	
+</body>
+	
+</html>

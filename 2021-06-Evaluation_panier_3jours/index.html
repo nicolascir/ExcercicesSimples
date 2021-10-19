@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Menu</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<h1> Menu</h1>
+	
+	<script>
+		
+		function filerpognon() {sessionStorage.setItem('pognon', 999)} ;
+		
+		
+		console.log(sessionStorage.getItem('pognon'));
+	
+	</script>
+
+  	
+<input type="button" value="donner 999 € à l'utilisateur" onclick="filerpognon()" />
+	<br>
+	(seule valeur qui utilise la mémoire session storage)
+	<br><br>
+<button class="boutonacceuil" onclick="window.location.href='creerobjet.html';">Formulaire de création d'objet</button>
+	<br>
+	REUSSI : champs requis, bouton valider , ajout boutons valeurs prédéfinies pour un test plus rapide 
+	//// NON REUSSI : sans rechargement de page
+	<br><br>
+	<button class="boutonacceuil" onclick="window.location.href='modifier.html';">Formulaire de modification d'un objet</button>
+	<br>
+	REUSSI : la modification est fonctionnelle, dans une page à part accéssible depuis la Creation ou le Magasin 
+<br><br>
+ 	<button class="boutonacceuil" onclick="window.location.href='magasin.html';">Magasin</button>
+	<br>
+REUSSI : Tableau des produits   , bouton modifier , les objets a zero strock n'apparaissent pas (avec une alerte dans console log) /// NON REUSSI : condition 10 produit ou-  , bouton panier+1 (mais des boutons de test sont présents)
+
+<br><br>
+	<button class="boutonacceuil" onclick="window.location.href='panier.html';">Panier et commande</button>
+	<br>
+REUSSI : tableau produits quantite prix , calcul hors taxe TVA TTC , bouton passer commande fonctionnel, SOLDE ,&nbsp; PANIER et QUANTITE EN STOCK se mettent à jour ,&nbsp;message d'avertissement&nbsp;<b>Le montant de la commande est supérieur à votre solde !</b> empeche de finaliser la commande  &nbsp; , le sous total se calcule  , les produits absents du panier n'aparraissent pas 
+	/// NON REUSSI : bouton panier +1 et bouton supprimer (mais des boutons de test sont présents)<br><br>
+
+
+	
+	
+</body>
+</html>

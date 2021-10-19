@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>exo 6 a 10</title>
+        <!-- Embedded style -->
+        <style> </style>
+        <!-- script de déclaration -->
+        <script> </script>
+    </head>
+
+    <body>
+       
+    </br></br></br>
+        6/ Créer un tableau en fournissant sa taille et sa valeur de remplissage
+        ex : 
+        console.log(array_filled(6, 0));
+        [0, 0, 0, 0, 0, 0]
+        console.log(array_filled(4, 'bla'));
+        ['bla', 'bla', 'bla', 'bla']
+    </br></br><script>
+    
+    let exo6montab = new Array();
+
+    function exo6fonction () {
+        for (i=0 ; i<arguments[0]; i++) {
+        exo6montab.push(arguments[1]) ;
+        }
+        document.write (exo6montab) ;
+    }
+ 
+    exo6fonction (4, 'bla') ;
+    
+
+    </script> 
+    </br></br></br>
+        7/ Trouver dans un tableau de chaines uniques laquelle est la plus longue : 
+        (tester avec deux chaines de meme taille ... )
+        ['a','aaa','aaaaa','bb','cccc'] -> 'aaaaa'
+    </br></br><script>
+    
+    let exo7array = ['a','aaa','aaaaa','bb','cccc'] ;
+  
+    //creation de nouveau tableau vide
+    // let exo7taille = [] ;
+    let exo7taille = new Array();
+    
+        //remplir ce nouveau tableau avec la longueur des chaines
+    for (i=0 ; i<exo7array.length ; i++) {
+        exo7taille.push (exo7array[i].length)
+    }
+
+    document.write (exo7taille);
+
+    //ceci indique quel est le maximum parmis le tableau exo7taille
+document.write ("<br>" + Math.max(...exo7taille));
+
+//ceci indique le numero dans l'index du tableau exo7taille
+    let exo7max = exo7taille.indexOf(Math.max(...exo7taille));
+    document.write("<br>" +exo7max)
+
+    //on fait apparaitre l'index 2 du tableau de l'énoncé
+    document.write ("<br>" + exo7array[exo7max])
+
+
+    
+
+    </script>
+    </br></br></br>
+        8/ Construire un nombre en récupérant le deuxieme chiffre de deux nombres à 3 chiffres passés en arguments :
+        ex : faitnombre(321,987) -> 28
+    </br></br><script>
+    
+let exo8nombre1=0
+let exo8nombre2=0
+
+function exo8faitnombre () {
+    exo8nombre1= arguments[0] ;
+    exo8nombre2= arguments[1] ;
+    exo8nombre1=String(exo8nombre1);
+    exo8nombre2=String(exo8nombre2);
+    document.write ((exo8nombre1.substring(1,2)+exo8nombre2.substring(1,2)))
+}
+ 
+document.write ("test avec fonction 321,987"+"<br>")
+exo8faitnombre(321,987) ;
+// faire une alternative avec modulo 10 pour trouver la dizaine
+    
+    </script>
+    </br></br></br>
+        9/ Faire une fonction javascript qui reclasse une chaine en ordre alphabétique : 
+        'wmkdua' -> 'adkmuw'
+
+         
+    </br></br><script>
+
+        let exo9chaine = new Array;
+    
+        const exo9mot ='wmkdua';
+        document.write ( exo9mot + "<br>" );
+        document.write ( exo9mot.substring(0,1)+ "<br>" );
+        document.write ( exo9mot.substring(1,2)+ "<br>" );
+      
+//creer un tableau avec les lettres individuelles
+        for (i=0; i<exo9mot.length ; i++) {
+            exo9chaine.push (exo9mot.substring(i,(i+1)))
+        }
+
+    document.write ( exo9chaine + "<br>" ) 
+    let exo9modif =new Array ;
+    
+    //trier 
+    exo9modif = (exo9chaine.sort()) ;
+    document.write ( exo9modif + "<br>" )
+    //transformer tableau en 1 mot
+    document.write (exo9modif.join(''))
+
+    </script>
+    </br></br></br>
+        10/ Determiner si un entier passé en argument est multiple de 7 ou 11 
+
+    </br></br><script>
+
+    function exo10fonction () {
+        if (arguments[0] % 7 == 0) { document.write ("c'est 7")} 
+        else if (arguments[0] % 11 == 0) { document.write ("c'est 11");} 
+        else { document.write ("ni l'un ni l'autre");} 
+
+
+    }
+    document.write("je teste (14)"+"<br>") ;
+    document.write(exo10fonction(14)+"<br>") ;
+    document.write("je teste (22)"+"<br>") ;
+    document.write(exo10fonction(22)+"<br>") ;
+    document.write("je teste (23)"+"<br>") ;
+    document.write(exo10fonction(23)+"<br>") ;
+
+    </script>
+ 
+    </body>
+
+</html>

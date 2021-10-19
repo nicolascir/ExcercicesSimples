@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>formulaire de création d'objet</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script src="script.js"></script>
+</head>
+
+<body>
+	Pour creer un objet veuillez entrer <br>
+	<br>
+	Nom résumé, lettres seulement sans espaces - exemple CrabeRouge - <br>
+	<input id="nomcode" type="text" maxlength="20"> <br>
+		Ref -   type AA-111   - <br>
+	<input id="refproduit" type="text" maxlength="6"> <br>
+	Nom - 250 chara max - <br>
+	<input id="nomproduit" type="text" maxlength="250"> <br>
+	description - 500 chara max - <br>
+	<input id="descriptionproduit" type="text" maxlength="500"> <br>
+	Quantité - nb entier - <br>
+	<input id="quantiteproduit" type="number"> <br>
+	Prix - nb flottant - <br>
+	<input id="prixproduit" type="number"> <br>
+	<br>
+	<script>
+
+		
+	function boutoncreer() {
+		var nomcode = document.getElementById("nomcode").value ;
+		var nouveau = {'ref':"a",'nom':"a", 'descrip':"a",'quanti':0,'prix':0,'danspanier':0};
+		localStorage.setItem(nomcode, JSON.stringify(nouveau)) ;
+		
+		var refproduit = document.getElementById("refproduit").value ;
+					var temporaire = JSON.parse(localStorage[nomcode]);
+					temporaire.ref = refproduit;
+					localStorage[nomcode] = JSON.stringify(temporaire); 
+		var nomproduit = document.getElementById("nomproduit").value ;
+					var temporaire = JSON.parse(localStorage[nomcode]);
+					temporaire.nom = nomproduit;
+					localStorage[nomcode] = JSON.stringify(temporaire); 
+		var descriptionproduit = document.getElementById("descriptionproduit").value ;
+					var temporaire = JSON.parse(localStorage[nomcode]);
+					temporaire.descrip = descriptionproduit;
+					localStorage[nomcode] = JSON.stringify(temporaire); 
+		var quantiteproduit = document.getElementById("quantiteproduit").value ;
+					var temporaire = JSON.parse(localStorage[nomcode]);
+					temporaire.quanti = quantiteproduit;
+					localStorage[nomcode] = JSON.stringify(temporaire); 
+		var prixproduit = document.getElementById("prixproduit").value ;
+					var temporaire = JSON.parse(localStorage[nomcode]);
+					temporaire.prix = prixproduit;
+					localStorage[nomcode] = JSON.stringify(temporaire); 
+		
+
+		
+		window.location.reload(false); 
+		
+
+		
+		}
+	</script>
+	<button onclick="boutoncreer()">Enregistrer</button> <br>
+	<br>
+	si vous voulez modifier un produit, cliquez sur ce bouton : 
+	<button class="boutonacceuil" onclick="window.location.href='modifier.html';">Modifier un produit</button> <br>
+	<br> <br>
+	Pour les besoins du test (CREEZ LES 4 SVP)<br>
+
+	
+	<script>
+			//function ajouttest1() {localStorage.setItem("AA-111","Crabe Rouge","un panier en osier de couleur rouge","50","14.90"); };
+		function ajouttest1() {
+			var CrabeRouge = {'ref':"AA-111",'nom':"Crabe Rouge", 'descrip':"un panier en osier de couleur rouge",'quanti':50,'prix':14.95,'danspanier':0};
+			localStorage.setItem('CrabeRouge', JSON.stringify(CrabeRouge)) ;
+		}
+	</script>
+	ajout rapide d'un produit CrabeRouge , produit normal <br>
+	<button onclick="ajouttest1()">ajouter Crabe Rouge </button> <br>
+	<script>
+			//function ajouttest2() {localStorage.setItem("BB-222","Mini Crabe Bleu"); };
+		function ajouttest2() {
+			var CrabeBleu = {'ref':"BB-222",'nom':"Mini Crabe Bleu", 'descrip':"un panier miniature pour bijou",'quanti':20,'prix':5.95,'danspanier':0};
+			localStorage.setItem('CrabeBleu', JSON.stringify(CrabeBleu)) ;
+		}
+	</script>
+	ajout rapide d'un produit CrabeBleu , produit normal <br>
+	<button onclick="ajouttest2()">ajouter Mini Crabe Bleu</button> <br>
+	<script>
+			//function ajouttest3() {localStorage.setItem("CC-333","Porte-cle Crabe Vert"); };
+		function ajouttest3() {
+			var CrabeVert = {'ref':"CC-333",'nom':"Porte-clef Crabe Vert", 'descrip':"un porte clé en hommage au panier à succès",'quanti':5,'prix':3.95,'danspanier':0};
+			localStorage.setItem('CrabeVert', JSON.stringify(CrabeVert)) ;
+		}
+	</script>
+	ajout rapide d'un produit CrabeVert = avec QUANTITE EN STOCK = 5 = EN DESSOUS DE 10; <br>
+	<button onclick="ajouttest3()">ajouter Porte-cle Crabe Vert</button> <br>
+	<script>
+			
+		function ajouttest4() {
+			var CrabeInvisible = {'ref':"DD-444",'nom':"Crabe Invisible", 'descrip':"Tellement invisible qu'il n'est plus en stock",'quanti':0,'prix':99.95,'danspanier':0};
+			localStorage.setItem('CrabeInvisible', JSON.stringify(CrabeInvisible)) ;
+		}
+	</script>
+	ajout rapide d'un produit CrabeInvisible = avec QUANTITE EN STOCK = 0; <br>
+	<button onclick="ajouttest4()">ajouter Crabe Invisible Out of stock</button> <br>
+	<br><br>
+		ce bouton vide le local storage<br>
+	<script>
+			function fonctionclearlocalstorage() {localStorage.clear(); };
+	</script>
+	<button onclick="fonctionclearlocalstorage()">clear local storage</button> <br>
+	ce bouton fait apparaitre dans la console tous les elements du local storage <br>
+	<button onclick="montremoilelocalstorage()">montrez moi le local storage dans la console</button> <br>
+	
+	 <br> <br> <br> <br>
+	<button class="boutonacceuil" onclick="window.location.href='index.html';">Quitter</button> <br>
+	
+</body>
+</html>

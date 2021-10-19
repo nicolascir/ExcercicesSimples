@@ -1,0 +1,80 @@
+
+
+1/ Calculer la somme et le produit d'un tableau d'entiers et affichez les deux résultats 
+ex : montab=[1,2,3,4,5]
+retour :
+-> masomme = 15
+-> monproduit = 120
+
+2/ Transformer un tableau de chaines en concaténant tous les elements du tableau, avec un séparateur passé en argument :
+ex :  transfo(["Red", "Green", "White", "Black"], "+") -> "Red+Green+White+Black"
+
+3/ Déterminer si une variable passée en argument est un tableau (ou pas)
+
+4/ Trier un tableau (forcément pair) d'entiers passé en argument :
+le premier et troisieme elements vont dans un premier tableau, 
+le deuxieme et quatrieme dans un deuxieme, etc ...
+calculer la somme des deux parties pour former un tableau de deux elements qui sera retourné 
+montab = [1,2,3,4,5,6,7,8]
+tab1 = [1,3,5,7]
+tab2 = [2,4,6,8]
+SORTIE 
+[16,20]
+
+5/ Trouver le plus grand entier dans un tableau quelconque d'entiers 
+
+6/ Créer un tableau en fournissant sa taille et sa valeur de remplissage
+ex : 
+console.log(array_filled(6, 0));
+[0, 0, 0, 0, 0, 0]
+console.log(array_filled(4, 'bla'));
+['bla', 'bla', 'bla', 'bla']
+
+7/ Trouver dans un tableau de chaines uniques laquelle est la plus longue : 
+(tester avec deux chaines de meme taille ... )
+['a','aaa','aaaaa','bb','cccc'] -> 'aaaaa'
+
+8/ Construire un nombre en récupérant le deuxieme chiffre de deux nombres à 3 chiffres passés en arguments :
+ex : faitnombre(321,987) -> 28
+
+9/ Faire une fonction javascript qui reclasse une chaine en ordre alphabétique : 
+'wmkdua' -> 'adkmuw'
+
+10/ Determiner si un entier passé en argument est multiple de 7 ou 11 
+
+11/ Déterminer si un entier passé en argument est situé entre  les valeurs 100(+-20) ou 400(+-20)
+Transformer en variables les valeurs 100 et 400 (passées en arguments)
+Transformer en variable l'intervalle 20 (passé en argument)
+ex : is_in_interval(125,100,10) -> false (125 n'est pas dans l'intervalle [90-110])
+
+12/ Ecrire une fonction pour calculer la difference entre un nombre donné et 13 :
+si le nombre est supérieur à 13, on retourne le double de la différence , sinon on retourne la différence seule
+
+13/ l'âge planétaire : 
+
+A partir des données astronomiques de révolution de chaque planète :
+
+  - Terre: periode orbitale 365.25 jours terrestres, 
+  - Mercure: periode orbitale 0.2408467 jours terrestres
+  - Venus: periode orbitale 0.61519726 jours terrestres
+  - Mars: periode orbitale 1.8808158 jours terrestres
+  - Jupiter: periode orbitale 11.862615 jours terrestres
+  - Saturne: periode orbitale 29.447498 jours terrestres
+  - Uranus: periode orbitale 84.016846 jours terrestres
+  - Neptune: periode orbitale 164.79132 jours terrestres
+
+Determinez l'âge (en secondes) qu'aurait une personne sur une autre planète, 
+par exemple quel âge aurait une personne âgée de 1 000 000 000 secondes sur Terre => 31.69 ans
+
+Utilisez si vous le souhaitez : 
+- une entrée texte pour entrer l'âge 
+- un menu déroulant pour sélectionner la planète 
+sinon utilisez les arguments ... 
+
+14/  parcours de tableaux : 
+ //soient 2 tableaux de meme longueur : parcourir les valeurs de chacun d'eux en ordre inverse : 
+ ascendant pour A et descentdant pour B (en n'utilisant qu'une seule boucle evidemment !)
+    var A=[1,2,3,4,5];
+    var B=["a","b","c","d","e"];
+
+

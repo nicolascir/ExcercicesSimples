@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+.boutonacceuil {
+	background-color: rgb(211,188,225);
+}
+
+table {
+background-color: lightgrey;
+border: medium solid #000000;
+width: 100%;
+}
+tr {
+background-color: grey;
+border: thin solid #6495ed;
+width: auto;
+}
+td {
+background-color: lightgrey;
+border: thin solid #6495ed;
+width: auto;
+}

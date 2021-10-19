@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>mdifier</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<h1> page de modification</h1> <br>
+<h3>-  Liste de l'existant  -</h3> 
+	<script>
+
+
+	var i=0;
+
+document.write("contenu actuel" + "<br>" + "<br>");
+for (i = 0; i < localStorage.length; i++)   {
+    document.write(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]"+ "<br>"+ "<br>");
+}
+
+</script>
+<h3> Formulaire de modification : Veuillez obligatoirement remplir le NOM</h3>
+		
+	premier nom dans la ligne "contenu actuel", exemple: CrabeRouge - SAISIE OBLIGATOIRE NON MODIFIABLE<br>
+<input id="nomcode" type="text" maxlength="20"> <br>
+	Ref -   type AA-111   - <br>
+	<input id="refproduit" type="text" maxlength="6"> <br>
+	Nom - 250 chara max - <br>
+	<input id="nomproduit" type="text" maxlength="250"> <br>
+	description - 500 chara max - <br>
+	<input id="descriptionproduit" type="text" maxlength="500"> <br>
+	Quantité - nb entier - <br>
+	<input id="quantiteproduit" type="number"> <br>
+	Prix - nb flottant - <br>
+	<input id="prixproduit" type="number"> <br>
+	<br>
+	
+<script>
+
+		
+	function boutonmodifier() {
+		var nomcode = document.getElementById("nomcode").value ;
+		
+		var refproduit = document.getElementById("refproduit").value ;
+					var temporaire = JSON.parse(localStorage[nomcode]);
+					temporaire.ref = refproduit;
+					localStorage[nomcode] = JSON.stringify(temporaire); 
+		var nomproduit = document.getElementById("nomproduit").value ;
+					var temporaire = JSON.parse(localStorage[nomcode]);
+					temporaire.nom = nomproduit;
+					localStorage[nomcode] = JSON.stringify(temporaire); 
+		var descriptionproduit = document.getElementById("descriptionproduit").value ;
+					var temporaire = JSON.parse(localStorage[nomcode]);
+					temporaire.descrip = descriptionproduit;
+					localStorage[nomcode] = JSON.stringify(temporaire); 
+		var quantiteproduit = document.getElementById("quantiteproduit").value ;
+					var temporaire = JSON.parse(localStorage[nomcode]);
+					temporaire.quanti = quantiteproduit;
+					localStorage[nomcode] = JSON.stringify(temporaire); 
+		var prixproduit = document.getElementById("prixproduit").value ;
+					var temporaire = JSON.parse(localStorage[nomcode]);
+					temporaire.prix = prixproduit;
+					localStorage[nomcode] = JSON.stringify(temporaire); 
+		
+		
+		
+		window.location.reload(false); 
+		
+
+		
+		}
+	</script>
+	
+<button onclick="boutonmodifier()">Valider</button> <br>
+	
+	<br><br>
+
+	<button class="boutonacceuil" onclick="window.location.href='creerobjet.html';">retour à la création d'objet</button> <br>
+	<button class="boutonacceuil" onclick="window.location.href='magasin.html';">retour au magasin</button> <br>
+		 
+	<button class="boutonacceuil" onclick="window.location.href='index.html';">Quitter</button> <br>
+	
+</body>
+</html>

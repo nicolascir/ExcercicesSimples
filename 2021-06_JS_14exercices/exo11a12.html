@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>exo 11 a 12</title>
+        <!-- Embedded style -->
+        <style> </style>
+        <!-- script de déclaration -->
+        <script> </script>
+    </head>
+
+    <body>
+       
+    
+    </br></br></br>
+        11/ Déterminer si un entier passé en argument est situé entre  les valeurs 100(+-20) ou 400(+-20)
+        Transformer en variables les valeurs 100 et 400 (passées en arguments)
+        Transformer en variable l'intervalle 20 (passé en argument)
+        ex : is_in_interval(125,100,10) -> false (125 n'est pas dans l'intervalle [90-110])
+    </br></br><script> 
+    
+        let min1 =0;
+        let min2 =0;
+        let max1 =0;
+        let max2 =0;
+
+// argument 0 c'est 100 , argument 1 c'est 400 , argument 2 c'est la valeur a tester, argument 3 a la place de 20
+    function exo11fonction () {
+        min1=((arguments[0])-20);
+        max1=((arguments[0])+=20);
+        min2=((arguments[1])-20);
+        max2=((arguments[1])+=20);
+        document.write ("les valeurs plus ou moins vingt  " +min1 +" " +max1+ " " +min2+ " "+ max2) ;
+        if ( (arguments[2] > min1 && arguments[2] < max1) || (arguments[2] > min2 && arguments[2] < max2))
+            { document.write ("OUI MONSIEUR")}
+            else {document.write ("C EST NON")}
+    }
+
+    document.write ("<br>"+"test avec 100,400 et val 101"+"<br>") ;
+    document.write (exo11fonction(100,400,101));
+    document.write ("<br>"+"test avec 20,400 et val 21"+"<br>");
+    document.write (exo11fonction(20,400,401));
+    document.write ("<br>"+"test avec 20,400 et val 999"+"<br>");
+    document.write (exo11fonction(20,400,999));
+
+    </script>
+    </br></br></br></br>
+        12/ Ecrire une fonction pour calculer la difference entre un nombre donné et 13 :
+        si le nombre est supérieur à 13, on retourne le double de la différence , sinon on retourne la différence seule
+    </br></br><script> 
+    
+    let exonombre = 0
+
+    document.write("test avec 999:    ");
+    exo12nombre = 999;
+    if (exo12nombre < 13) {document.write(13-exo12nombre)}
+    else {document.write((exo12nombre-13)*2)}
+
+
+    document.write("      test avec 10:       " );
+    exo12nombre = 10;
+    if (exo12nombre < 13) {document.write(13-exo12nombre)}
+    else {document.write((exo12nombre-13)*2)}
+
+
+
+    </script>
+  
+    </body>
+
+</html>

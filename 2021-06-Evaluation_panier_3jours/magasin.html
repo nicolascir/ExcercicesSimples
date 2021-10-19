@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>page d'achat</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+	
+	<div>
+<!--	TABLEAU EXEMPLE EN DUR -->
+		<br><br>
+Tableau créé de maniere dynamique , seul le bouton Panier +1 n'est pas encore fonctionnel
+	
+<table id="mytablepanier">
+	
+	<tr>
+    <th>REFERENCE</th>
+    <th>NOM cliquable</th>
+	<th>DESCRIPTION</th>
+	<th>Quantité en stock</th>
+	<th>PRIX</th>
+	<th>Ajouter dans le panier</th>
+	<th>Actuellement dans panier</th>
+	<th>Fiche produit</th>
+	<th>Admin : Modifier les paramètres du produit</th>
+
+	</tr>
+	
+
+</table>
+
+<script>
+	
+
+	function remplirTablePanier() {
+		
+		for (i=0; i<localStorage.length; i++) {
+		
+		var tbl = document.getElementById("mytablepanier") ;
+		var row = tbl.insertRow();
+		//ref
+		var cell1 = row.insertCell();
+		//nom
+		var cell2 = row.insertCell();
+		//descrip
+		var cell3 = row.insertCell();
+		//quanti
+		var cell4 = row.insertCell();
+		//prix
+		var cell5 = row.insertCell();
+		//ajouter panier
+		var cell6 = row.insertCell();
+		//actuellement dans panier
+		var cell7 = row.insertCell();
+		//fiche produit
+		var cell8 = row.insertCell();
+		//admin
+		var cell9 = row.insertCell();
+		//console.log ((JSON.parse(localStorage.getItem("CrabeRouge"))).ref)
+		cell1.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).ref);
+		cell2.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).nom);
+		cell3.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).descrip);
+		cell4.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).quanti);
+		cell5.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).prix);
+		cell6.innerHTML = '<button class="boutonpanier" type="button" onclick="">' + '<span class="spanpanier"></span> panier +1</button>';
+		cell7.innerHTML = ((JSON.parse(localStorage.getItem(localStorage.key(i)))).danspanier);
+		cell8.innerHTML = '<button class="boutonpanier" type="button" onclick=(window.location.href="ficheproduit.html")>' + '<span class="spanpanier"></span> fiche produit</button>';
+		
+		cell9.innerHTML = '<button class="boutonpanier" type="button" onclick=(window.location.href="modifier.html")>' + '<span class="spanpanier"></span> MODIFIER</button>';
+		
+//repérer zero stock
+		if (cell4.innerHTML == 0) {
+		tbl.deleteRow(1); 
+		console.log("une ligne sans stock n'a pas été affichée")
+			} else { ; }
+		}
+
+	}
+remplirTablePanier();
+</script>
+	</div>
+	
+	
+	<script>
+		
+		//bouton test en dur pour une seule valeur - qui fonctionne
+		function ajouterCrabeRouge() {
+		var temporaire = JSON.parse(localStorage["CrabeRouge"]);
+			temporaire.danspanier = ((temporaire.danspanier)+1);
+			localStorage["CrabeRouge"] = JSON.stringify(temporaire); 
+			window.location.reload(false); }
+		
+					function ajouterCrabeBleu() {
+		var temporaire = JSON.parse(localStorage["CrabeBleu"]);
+			temporaire.danspanier = ((temporaire.danspanier)+1);
+			localStorage["CrabeBleu"] = JSON.stringify(temporaire); 
+			window.location.reload(false); }
+		
+		//bouton ajouter au panier localStorage.key(i)=CrabeVert, CrabeRouge etc ...
+		
+//		function ajouterpanier() {
+//			var temporaire = JSON.parse(localStorage[localStorage.key(i)]);
+//			temporaire.danspanier = ((temporaire.danspanier)+1);
+//			localStorage[nomcode] = JSON.stringify(temporaire); }
+		
+	</script>
+	
+	<br>
+<button onclick="ajouterCrabeBleu()">bouton test pour ajouter 1 au panier pour mini Crabe Bleu</button> <br>
+	<button onclick="ajouterCrabeRouge()">bouton test pour ajouter 1 au panier pour CrabeRouge</button> <br>
+	
+
+	<br><br>
+		<button class="boutonacceuil" onclick="window.location.href='panier.html';">Panier et commande</button>
+	<br>
+	<br> <br> <br> <br>
+		
+	<button onclick="montremoilelocalstorage()">montrez moi le local storage dans la console</button> <br>
+	<button class="boutonacceuil" onclick="window.location.href='index.html';">Quitter</button> <br>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+Evaluation Bash :
+
+Votre cousin restaurateur vient de réouvrir, aidez-le à présentez sa carte ...
+
+Vous devez réaliser : 
+
+1/
+-  une carte des plats (avec exemple de rendu ci-après) -> menu.sh
+
+#######################################
+#          Au Bon GlouMiam            #
+#-------------------------------------#
+#-Entrées                             #
+#                                     #
+#-1 croquettes de poisson chat  - 12€ #
+#-2 filets de pimp              - 8€  #
+#-3 soufflé braisé              - 3€  #
+#-------------------------------------#
+#-Plats                               #
+#                                     #
+#-4 salade décomposée           - 17€ #
+#-5 agneau déconfiné            - 23€ #
+#-6 entrecote dégraissée        - 27€ #
+#-7 pelardon désseché           - 5€  #
+#                                     #
+#-------------------------------------#
+#-Desserts                            #
+#                                     #
+#-8 copeaux de safran vanillés   - 9€ #                 
+#-9 café mouillette              - 1€ #
+#                                     #
+#-------------------------------------#
+#-Boissons                            #                          
+#                                     #
+#10- coca cola aux glacons       - 3€ #
+#11- smoothie champignons/radis  - 8€ #
+#                                     #
+#######################################
+
+les informations de la carte sont dynamiques : 
+les plats -> numéro +  nom + prix seront tirés d'un fichier texte les listant (et pouvant être modifié), ils seront mis à jour dès modification du fichier.
+
+2/ une interface de commande des plats -> commande.sh
+
+Le serveur entre le numéro du plat et sa quantité au clavier, valide la commande totale par une touche spécifique ("T"), et le script calcule le total en fin de repas (avec une tva à 11.67%)
+
+Les deux parties de l'application pourront fonctionner dans deux fenetres distinctes.
+Il faudra bien sûr réutiliser les concepts vus en cours, les variables, les boucles, les fonctions, pour la partie présentation, il faudra se servir de la commande tput et la documenter pour l'utiliser à son plein potentiel.
+
+Bon appétit !!! 
+ 
+

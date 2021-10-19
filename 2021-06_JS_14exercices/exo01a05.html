@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>exo 1 a 5</title>
+        <!-- Embedded style -->
+        <style> </style>
+        <!-- script de déclaration -->
+        <script> </script>
+    </head>
+
+    <body>
+        1/ Calculer la somme et le produit d'un tableau d'entiers et affichez les deux résultats 
+        ex : montab=[1,2,3,4,5]
+        retour :
+        -> masomme = 15
+        -> monproduit = 120
+
+    </br></br><script>
+    let montab=[1, 12, 23, 34, 45, 56] ;
+    let masomme=0 ;
+    let monproduit=1 ;
+
+    for (i=0;i<montab.length;i++) {
+        
+        masomme = (masomme += montab[i]);
+        
+    }
+
+    for (i=0;i<montab.length;i++) {
+        
+        monproduit = (monproduit * montab[i]);
+    }
+
+    document.write (montab+"<br>"+masomme+"<br>"+monproduit) ;
+
+
+    </script>
+    </br></br></br>
+        
+        2/ Transformer un tableau de chaines en concaténant tous les elements du tableau, avec un séparateur passé en argument :
+        ex :  transfo(["Red", "Green", "White", "Black"], "+") -> "Red+Green+White+Black"
+    </br></br><script>
+
+    let exo2array=["un","canard","en","pâté"]
+    //faire une fonction de la ligne en dessous
+    //document.write(exo2array.join("++"))
+    function exo2fonction () {
+        document.write(exo2array.join(arguments[0])) ;
+    }
+
+    document.write ("test avec +++ en argument" + "<br>");
+    exo2fonction("+++");
+
+    
+
+
+    
+/*         function exo2fonction () {
+            for (i=0 ; i<exo2array.length ; i++) {
+            document.write (exo2array[i]) ; 
+            document.write (arguments[0]);
+            }
+        }
+
+        document.write (exo2fonction ("@")) */
+    
+    </script>
+    </br></br></br>
+        3/ Déterminer si une variable passée en argument est un tableau (ou pas)
+    </br></br><script> 
+/*     let exo3array = [1,2,3] ;
+    let exo3booboo = true ;
+
+    
+    document.write ("<br>"+"test boolen"+"<br>");
+    document.write (typeof exo3booboo);
+    document.write ("<br>"+"test tableau"+"<br>");
+    document.write (typeof exo3array);
+     */
+   // function exo3fonction () {}
+
+   //en vrai utiliser IS ARRAY
+
+    </script>
+    </br></br></br>
+        4/ Trier un tableau (forcément pair) d'entiers passé en argument :
+        le premier et troisieme elements vont dans un premier tableau, 
+        le deuxieme et quatrieme dans un deuxieme, etc ...
+        calculer la somme des deux parties pour former un tableau de deux elements qui sera retourné 
+        montab = [1,2,3,4,5,6,7,8]
+        tab1 = [1,3,5,7]
+        tab2 = [2,4,6,8]
+        SORTIE 
+        [16,20]
+    </br></br><script>
+
+    let exo4montab = new Array() ;
+    let exo4premier = new Array() ;
+    let exo4deuxieme = new Array() ;
+    let exo4addpremier = 0;
+    let exo4adddeuxieme = 0;
+
+    function exo4fonction () {
+        exo4montab = [1,2,3,4,5,6,7,8]
+
+        for (i=0; i<exo4montab.length;) {
+            exo4premier.push(exo4montab[i]);
+            i=(i+=2);
+        }
+        for (i=1; i<exo4montab.length;) {
+            exo4deuxieme.push(exo4montab[i]);
+            i=(i+=2);
+        }
+        for (i=0; i<exo4premier.length; i++) {
+            exo4addpremier=(exo4addpremier+=exo4premier[i]);
+        }
+        for (i=0; i<exo4deuxieme.length; i++) {
+            exo4adddeuxieme=(exo4adddeuxieme+=exo4deuxieme[i]);
+        }
+    }
+
+    exo4fonction ()
+        document.write ("<br>"+exo4montab+"<br>"+exo4premier+"<br>"+exo4deuxieme+"<br>"+exo4addpremier+"<br>"+exo4adddeuxieme);
+    
+    
+    </script>
+    </br></br></br>
+        5/ Trouver le plus grand entier dans un tableau quelconque d'entiers 
+    </br></br><script>
+
+    
+    let exo5montab=[23,45,35,567,345,23457,45] ;
+
+    //document.write ( Math.max(...exo5montab) ) ;
+    let exo5max = 0
+
+    for (i=0; i<exo5montab.length; i++) {
+        if (exo5montab[i]<=exo5max) {} 
+        else {exo5max=exo5montab[i]}
+    }
+document.write (exo5max)
+
+    </script>
+    </br></br></br>
+    </body>
+
+</html>

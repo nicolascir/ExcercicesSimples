@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Document sans nom</title>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+	<div id="la barre de bootstrap cheatée">
+		
+		<script>
+			function searchcoin () { confirm("tu y a cru, hein ?")};
+		</script>
+		
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Bootstrap</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" onclick="afficherMenu1()">Menu1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" onclick="afficherMenu2()">Menu2</a>
+        </li>        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" onclick="afficherMenu3()">Menu3</a>
+        </li>        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" onclick="afficherMenu4()">Menu4</a>
+        </li>        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" onclick="afficherMenu5()">Menu5</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" onclick="searchcoin()">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+		
+<br><br><br>
+</div>
+	
+	
+<div id="mon menu fait à la main">
+
+	<script>
+	function cacherMenu() {
+  var x = document.getElementById("lanavbar");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+		
+		
+function afficherMenu1() {
+	document.getElementById("divdumenu2").className="d-none"
+	document.getElementById("divdumenu3").className="d-none"
+	document.getElementById("divdumenu4").className="d-none"
+	document.getElementById("divdumenu5").className="d-none"
+	if (document.getElementById("divdumenu1").className=="d-block"){
+		document.getElementById("divdumenu1").className="d-none";
+	} else {
+	document.getElementById("divdumenu1").className="d-block" }
+}
+		function afficherMenu2() {
+	document.getElementById("divdumenu1").className="d-none"
+	document.getElementById("divdumenu3").className="d-none"
+	document.getElementById("divdumenu4").className="d-none"
+	document.getElementById("divdumenu5").className="d-none"
+	if (document.getElementById("divdumenu2").className=="d-block"){
+		document.getElementById("divdumenu2").className="d-none";
+	} else {
+	document.getElementById("divdumenu2").className="d-block" }
+}
+		function afficherMenu3() {
+	document.getElementById("divdumenu1").className="d-none"
+	document.getElementById("divdumenu2").className="d-none"
+	document.getElementById("divdumenu4").className="d-none"
+	document.getElementById("divdumenu5").className="d-none"
+	if (document.getElementById("divdumenu3").className=="d-block"){
+		document.getElementById("divdumenu3").className="d-none";
+	} else {
+	document.getElementById("divdumenu3").className="d-block" }
+}
+		function afficherMenu4() {
+	document.getElementById("divdumenu1").className="d-none"
+	document.getElementById("divdumenu2").className="d-none"
+	document.getElementById("divdumenu3").className="d-none"
+	document.getElementById("divdumenu5").className="d-none"
+	if (document.getElementById("divdumenu4").className=="d-block"){
+		document.getElementById("divdumenu4").className="d-none";
+	} else {
+	document.getElementById("divdumenu4").className="d-block" }
+}
+		function afficherMenu5() {
+	document.getElementById("divdumenu1").className="d-none"
+	document.getElementById("divdumenu2").className="d-none"
+	document.getElementById("divdumenu3").className="d-none"
+	document.getElementById("divdumenu4").className="d-none"
+	if (document.getElementById("divdumenu5").className=="d-block"){
+		document.getElementById("divdumenu5").className="d-none";
+	} else {
+	document.getElementById("divdumenu5").className="d-block" }
+}
+	</script>
+	
+
+<button class="btn btn-outline-secondary" onclick="cacherMenu()">hide/show</button>
+	
+	
+  <nav  id="lanavbar" style="background-color:#f2fefc;" >
+    
+		
+		
+        <button class="btn btn-outline-secondary" onclick="afficherMenu1()">Menu1</button>
+        <button class="btn btn-outline-secondary" onclick="afficherMenu2()">Menu2</button>
+		<button class="btn btn-outline-secondary" onclick="afficherMenu3()">Menu3</button>
+		<button class="btn btn-outline-secondary" onclick="afficherMenu4()">Menu4</button>
+		<button class="btn btn-outline-secondary" onclick="afficherMenu5()">Menu5</button>
+       
+    
+</nav>
+ <br><br><br>
+	</div>
+	
+	<div id="divdumenu1" class="d-none">
+		
+		
+<script>
+
+	
+function insererImage(numdelimage) {
+	document.getElementById("uneimage").textContent="";
+	
+	if (numdelimage == 1) { var img = document.createElement("img"); img.src = "https://www.pokepedia.fr/images/thumb/e/e7/Pikachu-RFVF.png/250px-Pikachu-RFVF.png"; document.getElementById("uneimage").appendChild(img); }
+	else if (numdelimage == 2) { var img = document.createElement("img"); img.src = "https://www.pokepedia.fr/images/thumb/6/67/Vip%C3%A9lierre-NB2.png/250px-Vip%C3%A9lierre-NB2.png"; document.getElementById("uneimage").appendChild(img); }
+	else if (numdelimage == 3) { var img = document.createElement("img"); img.src = "https://www.pokepedia.fr/images/thumb/6/62/Feunnec-XY.png/250px-Feunnec-XY.png"; document.getElementById("uneimage").appendChild(img); }
+	else if (numdelimage == 4) { var img = document.createElement("img"); img.src = "https://www.pokepedia.fr/images/thumb/6/6c/Flamiaou-USUL.png/250px-Flamiaou-USUL.png"; document.getElementById("uneimage").appendChild(img); }
+	else {} ;
+	
+		}	
+		
+</script>
+		
+		<table class=" table table-light table-striped table-bordered border-secondary">
+  
+
+  <tr>
+    <th>Titre colonne 1</th>
+    <th>Titre colonne 2</th>
+  </tr>
+
+  <tr>
+    <td><a onmouseover= "insererImage(1)" href="#">cellule A1</a></td>
+    <td><a onmouseover= "insererImage(2)" href="#">cellule B1</a></td>
+  </tr>
+
+  <tr>
+    <td><a onmouseover= "insererImage(3)" href="#">cellule A2</a></td>
+    <td><a onmouseover= "insererImage(4)" href="#">cellule B2</a></td>
+  </tr>
+</table>
+		<span id="uneimage"></span>
+
+		
+</div>
+	
+<div id="divdumenu2" class="d-none">
+	
+	<script> 
+		function getFormvalue() {
+		var champnom = document.getElementById("lechampdunom").value;
+		var champrenom = document.getElementById("lechampduprenom").value;
+		var tbl = document.getElementById("letabdumenu2") ;
+		var row = tbl.insertRow();
+		var cell1 = row.insertCell();
+		cell1.innerHTML = champnom;
+		var cell2 = row.insertCell();
+		cell2.innerHTML = champrenom;
+		document.getElementById("lechampdunom").value = "";
+		document.getElementById("lechampduprenom").value = "";
+		}
+	
+	
+	</script>
+		
+	<form id="form1" onsubmit="getFormvalue()">
+		<input id= "lechampdunom" type="text" placeholder="input 1 / nom"><br>		
+		<input id="lechampduprenom" type="text" placeholder="input 2 / prenom"><br>
+		<input type="submit" value="add"><br>
+	</form>
+	
+	
+<br>
+<table id="letabdumenu2" class="table table-bordered border-secondary">
+  
+  <tr>
+    <th>Nom</th>
+    <th>Prenom</th>
+  </tr>
+
+
+</table>
+
+
+
+</div>
+	
+<div id="divdumenu3" class="d-none">
+		
+	
+<script>
+	function changeMark(){document.getElementById("spanachanger").className="mark";}
+	function changeUnderline(){document.getElementById("spanachanger").className="text-decoration-underline";}
+	function changeBarre(){document.getElementById("spanachanger").className="text-decoration-line-through";}
+	
+</script>	
+	
+	
+	<div class="dropdown">
+  		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+   		 Changer style 
+  		</button>
+  		<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    		<li><a class="dropdown-item" onclick="changeMark()">Feutre jaune</a></li>
+    		<li><a class="dropdown-item" onclick="changeUnderline()">Souligné</a></li>
+    		<li><a class="dropdown-item" onclick="changeBarre()">barré</a></li>
+  		</ul>
+	</div>
+			
+
+<br><br>
+<h5>paragraphe</h5><br><br>
+<p id="spanachanger" class="small">Lorem ipsum dolor sit amet. Ut praesentium facilis id laboriosam dolores sed dolorem perferendis est eligendi illum quo laborum eveniet aut dolorem sunt ad quia voluptas. Sed galisum esse ut sequi quasi aut accusamus obcaecati est impedit excepturi! Eos eius quaerat sed blanditiis quod non libero illum et nemo cupiditate. Eum inventore mollitia</p>
+	
+	
+</div>
+
+
+	
+<div id="divdumenu4" class="d-none">
+		
+	
+<script>
+	function trierNormal(){
+		document.getElementById("cesttrie").textContent="";
+		tableautri = [document.getElementById("val1").innerHTML,document.getElementById("val2").innerHTML,document.getElementById("val3").innerHTML,document.getElementById("val4").innerHTML]
+		tableautri.sort();
+		cibletrie = document.getElementById("cesttrie").innerHTML;
+		cibletrie += " <ul> <li>"+tableautri[0]+"</li>"
+		+"<li>"+tableautri[1]+"</li>"
+		+"<li>"+tableautri[2]+"</li>"
+		+"<li>"+tableautri[3]+"</li>";
+		document.getElementById("cesttrie").innerHTML = cibletrie;
+	}
+		function trierInverse(){
+		document.getElementById("cesttrie").textContent="";
+		tableautri = [document.getElementById("val1").innerHTML,document.getElementById("val2").innerHTML,document.getElementById("val3").innerHTML,document.getElementById("val4").innerHTML]
+		tableautri.sort();
+		tableautri.reverse();
+		cibletrie = document.getElementById("cesttrie").innerHTML;
+		cibletrie += " <ul> <li>"+tableautri[0]+"</li>"
+		+"<li>"+tableautri[1]+"</li>"
+		+"<li>"+tableautri[2]+"</li>"
+		+"<li>"+tableautri[3]+"</li>";
+		document.getElementById("cesttrie").innerHTML = cibletrie;
+	}
+	
+
+</script>
+		Liste non triée<br>
+		<ul>
+			<li id="val1">bbbb</li>
+			<li id="val2">cccc</li>
+			<li id="val3">aaaa</li>
+			<li id="val4">dddd</li>
+		</ul>
+	<br>
+	<input type="button" value="aplhabétique" onclick="trierNormal()" /><br>
+	<input type="button" value="inverse" onclick="trierInverse()" />
+		
+	<br><br>liste triée
+	<span id="cesttrie">
+	</span>
+		
+</div>
+	
+<div id="divdumenu5" class="d-none">
+	
+	
+
+	
+<script>
+	
+	function creerDiv(){
+		document.getElementById("divoudropici").textContent="";
+		contenu1 =""; contenu2 =""; contenu3 =""; contenu4 ="";
+		if (document.getElementById("flexCheckDefault1").checked == true){contenu1="contenu 1 , "}else{};
+		if (document.getElementById("flexCheckDefault2").checked == true){contenu2="contenu 2 , "}else{};
+		if (document.getElementById("flexCheckDefault3").checked == true){contenu3="contenu 3 , "}else{};
+		if (document.getElementById("flexCheckDefault4").checked == true){contenu4="contenu 4 , "}else{};
+		
+		cible = document.getElementById("divoudropici").innerHTML;
+		cible += "<div>"+"une div a été crée avec ..."+"<br>"
+			+contenu1+contenu2+contenu3+contenu4
+			+"</div>";
+		document.getElementById("divoudropici").innerHTML = cible;
+
+	
+	}
+	
+
+
+		function creerDrop(){
+	
+		document.getElementById("divoudropici").textContent="";
+		contenu1 =""; contenu2 =""; contenu3 =""; contenu4 ="";
+		if (document.getElementById("flexCheckDefault1").checked == true){contenu1="contenu 1 "}else{};
+		if (document.getElementById("flexCheckDefault2").checked == true){contenu2="contenu 2 "}else{};
+		if (document.getElementById("flexCheckDefault3").checked == true){contenu3="contenu 3 "}else{};
+		if (document.getElementById("flexCheckDefault4").checked == true){contenu4="contenu 4 "}else{};
+		
+		cible = document.getElementById("divoudropici").innerHTML;
+		cible += 
+"<div class='dropdown'>"
++"<button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButtonZ' data-bs-toggle='dropdown' aria-expanded='false'>"
++"Drop' avec contenu"
++"</button>"
++"<ul class='dropdown-menu' aria-labelledby='dropdownMenuButtonZ'>"
++"<li><a class='dropdown-item' href='#'>"+contenu1+"</a></li>"
++"<li><a class='dropdown-item' href='#'>"+contenu2+"</a></li>"
++"<li><a class='dropdown-item' href='#'>"+contenu3+"</a></li>"
++"<li><a class='dropdown-item' href='#'>"+contenu4+"</a></li>"
++"</ul>"
++"</div>"
+
+			;
+		document.getElementById("divoudropici").innerHTML = cible;
+		
+	}
+	
+</script>	
+	
+cochez une ou plusieurs options
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+  <label class="form-check-label" for="flexCheckDefault">
+    option 1
+  </label>
+	</div>
+<div class="form-check">
+	<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+  <label class="form-check-label" for="flexCheckDefault">
+    option 2
+  </label>
+</div>
+<div class="form-check">			
+		  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+  <label class="form-check-label" for="flexCheckDefault">
+    option 3
+  </label>
+</div>
+<div class="form-check">
+		  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+  <label class="form-check-label" for="flexCheckDefault">
+    option 4
+  </label>
+</div>
+	<br><br>Choisissez quoi créer :<br>
+	
+<div class="form-check">
+  <input onclick="creerDiv()" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Créer DIV
+  </label>
+</div>
+	
+<div class="form-check">
+  <input onclick="creerDrop()" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Créer drop
+  </label>
+</div>
+<br><br>	
+<span id="divoudropici"></span>
+	
+	
+</div>
+
+	
+</body>
+</html>
